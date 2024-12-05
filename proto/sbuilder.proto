@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sbuilder;
+
+service SBuilder {
+    rpc Chat(Question) returns (stream TextStreamer) {}; // streams texts to client
+}
+
+message Question {
+    string question = 1;
+}
+
+message TextStreamer {
+    string text = 1;
+}
